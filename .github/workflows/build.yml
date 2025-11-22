@@ -21,10 +21,13 @@ jobs:
 
             - name: Build Xcode Archive
               run: |
+                  # Use -sdk iphoneos (instead of a destination that requires a specific iOS runtime)
+                  # and build Release configuration for archive. This avoids the "iOS X.Y is not installed" error.
                   xcodebuild archive \
                     -project StosVPN.xcodeproj \
                     -scheme StosVPN \
-                    -destination 'generic/platform=iOS' \
+                    -sdk iphoneos \
+                    -configuration Release \
                     -archivePath build/StosVPN.xcarchive \
                     CODE_SIGN_IDENTITY="" \
                     CODE_SIGNING_REQUIRED=NO \
