@@ -32,7 +32,9 @@ jobs:
                     CODE_SIGN_IDENTITY="" \
                     CODE_SIGNING_REQUIRED=NO \
                     CODE_SIGNING_ALLOWED=NO
-
+                    PROVISIONING_PROFILE_SPECIFIER=""
+                    PROVISIONING_PROFILE=""
+                    
             - name: Create Payload directory
               run: mkdir -p Payload
 
